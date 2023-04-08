@@ -1,0 +1,38 @@
+﻿@model OwnWebApiTest.Models.UserInput
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+</div>
+<h1>Generate random numbers</h1>
+
+<h4>UserInput</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HowManyInts" class="control-label"></label>
+                <input asp-for="HowManyInts" class="form-control" />
+                <span asp-validation-for="HowManyInts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => modelItem.HowManyInts )
+            </th>
+        </tr>
+    </thead>
+</table>

@@ -1,0 +1,50 @@
+﻿@model OwnWebApiTest.Models.UserInput
+@{
+    ViewData["Title"] = "Ask";
+}
+
+@using (Html.BeginForm("Random", "UserInputs", FormMethod.Post))
+{
+    <div id="Ask">
+        <div class="name">
+            <span>Enter int</span> @Html.TextBoxFor(model => model.HowManyInts)
+        </div>
+    </div>
+    <button typeof="submit">Show</button>
+}
+
+@Html.DisplayFor(modelItem => modelItem.HowManyInts)
+
+@*@Html.DisplayFor(modelItem => modelItem.ArrayInts)*@
+@*@for (int i = 0; i < Model.ArrayInts.Length; i++)
+{
+    Html.DisplayFor(modelItem => modelItem.ArrayInts[i]); // crash :D
+}*@
+@*<h1>Generate random numbers</h1>
+
+<h4>UserInput</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="HowManyInts" class="control-label"></label>
+                <input asp-for="HowManyInts" class="form-control" />
+                <span asp-validation-for="HowManyInts" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => modelItem.HowManyInts )
+            </th>
+        </tr>
+    </thead>
+</table>*@

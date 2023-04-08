@@ -1,0 +1,41 @@
+﻿@model Unsorted
+@{
+    ViewData["Title"] = "Random";
+}
+
+<h1>Random</h1>
+
+@{
+        var info = String.Join(", ", Model.IntArray);
+    @info
+}
+
+<p>Wybierz sposób sortowania:</p>
+@using (Html.BeginForm("SortMe", "UserInputs", FormMethod.Post))
+{
+    <div ="ask">
+       <span>Bubble Sort </span>@Html.RadioButtonFor(model => model.SortChoice, 1)<br />
+       <span>Insertion Sort </span>@Html.RadioButtonFor(model => model.SortChoice, 2)<br />
+        <span>Merge Sort </span>@Html.RadioButtonFor(model => model.SortChoice, 3)<br />
+        <span>Quick Sort </span>@Html.RadioButtonFor(model => model.SortChoice, 4)<br />
+        <span>Selection Sort </span>@Html.RadioButtonFor(model => model.SortChoice, 5)<br />
+        <span>Tree Sort </span>@Html.RadioButtonFor(model => model.SortChoice, 6)<br />
+        <span>All (not implemented yet) </span>@Html.RadioButtonFor(model => model.SortChoice, 7)
+
+    </div>
+    <button typeof="submit">Show</button>
+}
+@*@for (int i = 0; i < model.intarray.length; i++)
+{
+    html.displayfor(itemmodel => itemmodel.intarray[i] + " ");
+}*@
+@*<div id="showme">
+    @*<p>&nbsp; @Html.DisplayFor(itemModel => itemModel.IntArray) &nbsp;</p>  ani <p> ani &nbsp; nie działa ;/
+</div>*@
+@*<div id="showme">
+@for (int i = 0; i < Model.IntArray.Length; i++)
+{
+
+        <p>@Model.IntArray[i]</p>
+}
+</div>*@
